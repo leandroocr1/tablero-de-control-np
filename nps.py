@@ -7,6 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1gG_alHFVUZHk-MEL7n9f8LifbqQBbgzn
 """
 
+import streamlit as st
 from enum import unique
 import pandas as pd
 import numpy as np
@@ -364,7 +365,9 @@ plt.ylabel('Estado NP')
 plt.grid(axis='x', linestyle='--', alpha=0.7) # Rejilla vertical para ayudar a la lectura
 plt.tight_layout() # Ajusta el margen para que no se corten los nombres de los estados
 ax.tick_params(axis='y', labelsize=8)
-plt.show()
+#plt.show()
+st.pyplot(fig)
+
 
 # grafica 2
 resumen_estado = df2.groupby('Estado NP', observed=False)['Valor Total'].sum().reset_index()
@@ -392,7 +395,9 @@ plt.ylabel('Estado NP')
 plt.grid(axis='x', linestyle='--', alpha=0.7) # Rejilla vertical para ayudar a la lectura
 plt.tight_layout() # Ajusta el margen para que no se corten los nombres de los estados
 ax.tick_params(axis='y', labelsize=8)
-plt.show()
+#plt.show()
+st.pyplot(fig)
+
 
 
 # grafica 3
@@ -413,7 +418,9 @@ plt.ylabel('Listado Mes')
 plt.grid(axis='x', linestyle='--', alpha=0.7) # Rejilla vertical para ayudar a la lectura
 plt.tight_layout() # Ajusta el margen para que no se corten los nombres de los estados
 ax.tick_params(axis='y', labelsize=9)
-plt.show()
+#plt.show()
+st.pyplot(fig)
+
 
 
 
@@ -442,7 +449,9 @@ plt.ylabel('Profesional Nps')
 plt.grid(axis='x', linestyle='--', alpha=0.7) # Rejilla vertical para ayudar a la lectura
 plt.tight_layout() # Ajusta el margen para que no se corten los nombres de los estados
 ax.tick_params(axis='y', labelsize=7)
-plt.show()
+#plt.show()
+st.pyplot(fig)
+
 
 
 # grafica 5
@@ -470,7 +479,9 @@ plt.ylabel('Cto de Obra')
 plt.grid(axis='x', linestyle='--', alpha=0.7) # Rejilla vertical para ayudar a la lectura
 plt.tight_layout() # Ajusta el margen para que no se corten los nombres de los estados
 ax.tick_params(axis='y', labelsize=8)
-plt.show()
+#plt.show()
+st.pyplot(fig)
+
 
 
 # grafica 6
@@ -493,7 +504,9 @@ plt.ylabel('Cto de Obra')
 plt.grid(axis='x', linestyle='--', alpha=0.7) # Rejilla vertical para ayudar a la lectura
 plt.tight_layout() # Ajusta el margen para que no se corten los nombres de los estados
 ax.tick_params(axis='y', labelsize=8)
-plt.show()
+#plt.show()
+st.pyplot(fig)
+
 
 
 # grafica 7
@@ -512,7 +525,9 @@ plt.ylabel('Mes / Estado')
 plt.grid(axis='x', linestyle='--', alpha=0.7) # Rejilla vertical para ayudar a la lectura
 plt.tight_layout() # Ajusta el margen para que no se corten los nombres de los estados
 ax.tick_params(axis='y', labelsize=8)
-plt.show()
+#plt.show()
+st.pyplot(fig)
+
 
 
 
@@ -531,7 +546,9 @@ fig = px.parallel_categories(df_sankey,
                              color='Frec', color_continuous_scale=px.colors.sequential.RdPu, width=750, height=380)
 fig.update_layout(coloraxis_showscale=False) # linea para ocultar la escala de la grafica
 fig.update_traces(labelfont=dict(family='Arial, Gadget, sans-serif',size=13,color='black'))
-fig.show()
+#fig.show()
+st.plotly_chart(fig)
+
 
 
 # grafica 9: Gráfico de Sankey o de categorias paralelas MES FRENTE A NPS CONTRACTUALES Y NPS-----------------------------------------
@@ -542,7 +559,9 @@ fig = px.parallel_categories(df_sankey,
                              color='Frec', color_continuous_scale=px.colors.sequential.GnBu, width=600, height=380)
 fig.update_layout(coloraxis_showscale=False)
 fig.update_traces(labelfont=dict(family='Arial, Gadget, sans-serif',size=13,color='black'))
-fig.show()
+#fig.show()
+st.plotly_chart(fig)
+
 
 
 
@@ -556,7 +575,9 @@ fig = px.parallel_categories(df_sankey,
                              color='Frec', color_continuous_scale=px.colors.sequential.YlGnBu, width=600, height=650)
 fig.update_layout(coloraxis_showscale=False)
 fig.update_traces(labelfont=dict(family='Arial, Gadget, sans-serif',size=13,color='black'))
-fig.show()
+#fig.show()
+st.plotly_chart(fig)
+
 
 
 
@@ -570,7 +591,9 @@ fig = px.parallel_categories(df_sankey,
                              color='Frec', color_continuous_scale=px.colors.sequential.PuBu, width=750, height=380)
 fig.update_layout(coloraxis_showscale=False)
 fig.update_traces(labelfont=dict(family='Arial, Gadget, sans-serif',size=13,color='black'))
-fig.show()
+#fig.show()
+st.plotly_chart(fig)
+
 
 
 # grafica 12: Gráfico de Sankey o de categorias paralelas Estado NP cantidad y valor monetario-----------------------------------------
@@ -583,7 +606,9 @@ fig = px.parallel_categories(df_sankey,
                              color='Frec', color_continuous_scale=px.colors.sequential.Peach, width=750, height=420)
 fig.update_layout(coloraxis_showscale=False)
 fig.update_traces(labelfont=dict(family='Arial, Gadget, sans-serif',size=13,color='black'))
-fig.show()
+#fig.show()
+st.plotly_chart(fig)
+
 
 
 
@@ -604,7 +629,9 @@ fig.update_layout(height=250, yaxis={'visible': False, 'showgrid': True, 'zeroli
 
 fig.update_xaxes(showline=True, linewidth=1, linecolor='black', mirror=True)
 fig.update_yaxes(showline=True, linewidth=1, linecolor='black', mirror=True)
-fig.show()
+#fig.show()
+st.plotly_chart(fig)
+
 
 
 # grafica 13: Gráfico de burbujas (Bubble Chart 1D)
@@ -620,7 +647,9 @@ fig.update_layout(height=250, yaxis={'visible': False, 'showgrid': True, 'zeroli
 
 fig.update_xaxes(showline=True, linewidth=1, linecolor='black', mirror=True)
 fig.update_yaxes(showline=True, linewidth=1, linecolor='black', mirror=True)
-fig.show()
+#fig.show()
+st.plotly_chart(fig)
+
 
 
 
